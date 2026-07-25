@@ -11,7 +11,7 @@ export const notesBase = [
     fallbackDate: "2024/06/29",
     links: [
       { label: "Main file", href: "document/Fluid Mechanics.pdf" },
-      { label: "Old version", href: "document/流體力學.pdf" }
+      { label: "Old version", href: "document/Fluid Mechanics (old ver).pdf" }
     ]
   },
   {
@@ -34,10 +34,10 @@ export const notesBase = [
   },
   {
     title: "7th Tian Wu Physics Competition Final (第七屆天物盃決賽) - Q3",
-    dateSourceHref: "document/第七屆天物盃決賽 思考賽 Q3.pdf",
+    dateSourceHref: "document/Tian-Wu_Physics_Cup_Q3.pdf",
     links: [
-      { label: "Problem", href: "document/第七屆天物盃決賽 思考賽 Q3.pdf" },
-      { label: "Solution", href: "document/第七屆天物盃決賽 思考賽 Q3 解答.pdf" },
+      { label: "Problem", href: "document/Tian-Wu_Physics_Cup_Q3.pdf" },
+      { label: "Solution", href: "document/Tian-Wu_Physics_Cup_A3.pdf" },
       { label: "Original Facebook link", href: "https://www.facebook.com/share/p/AW9EGxkNH9CqTBhx/" }
     ]
   },
@@ -47,7 +47,7 @@ export const notesBase = [
     links: [
       { label: "Problem", href: "document/Q2.pdf" },
       { label: "Answer", href: "document/S2.pdf" },
-      { label: "Solution and Marking Scheme", href: "document/S2詳解與配分.pdf" }
+      { label: "Solution and Marking Scheme", href: "document/S2_full.pdf" }
     ]
   },
   {
@@ -68,18 +68,18 @@ export const notesBase = [
       { label: "Problem statement", href: "https://physicscup.ee/physics-cup-taltech-2024-problem-4/" }
     ]
   },
-  {
-    title: "Self-learning Project",
-    description: "A project focused primarily on further studying the field of electrodynamics.",
-    dateSourceHref: "document/自主學習 電磁輻射.pdf",
-    links: [
-      { label: "Report", href: "document/自主學習 電磁輻射.pdf" },
-      { label: "PPT", href: "document/自主學習 電磁輻射 PPT.pdf" }
-    ]
-  },
-  {
-    title: "Program Design",
-    dateSourceHref: "document/Final_Report.pdf",
-    links: [{ label: "Report", href: "document/Final_Report.pdf" }]
-  }
+  // {
+  //   title: "Self-learning Project",
+  //   description: "A project focused primarily on further studying the field of electrodynamics.",
+  //   dateSourceHref: "document/自主學習 電磁輻射.pdf",
+  //   links: [
+  //     { label: "Report", href: "document/自主學習 電磁輻射.pdf" },
+  //     { label: "PPT", href: "document/自主學習 電磁輻射 PPT.pdf" }
+  //   ]
+  // },
+  // {
+  //   title: "Program Design",
+  //   dateSourceHref: "document/Final_Report.pdf",
+  //   links: [{ label: "Report", href: "document/Final_Report.pdf" }]
+  // }
 ];

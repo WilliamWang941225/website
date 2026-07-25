@@ -10,7 +10,7 @@ export default function Tutor() {
         </header>
         <p>
           I&apos;m looking forward to providing <b>tutoring</b>. {" "}
-          <a href="document/家教CV.pdf" target="_blank" rel="noreferrer">
+          <a href="document/CV.pdf" target="_blank" rel="noreferrer">
             Here
           </a>{" "}
           is the detailed information.

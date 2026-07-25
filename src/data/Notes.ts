@@ -26,10 +26,10 @@ export const notes: Note[] = [
       },
       {
         "label": "Old version",
-        "href": "document/流體力學.pdf"
+        "href": "document/Fluid Mechanics (old ver).pdf"
       }
     ],
-    "date": "2026/06/23"
+    "date": "2026/07/23"
   },
   {
     "title": "Notes on Classical Electrodynamics 3rd edition, John David Jackson",
@@ -59,11 +59,11 @@ export const notes: Note[] = [
     "links": [
       {
         "label": "Problem",
-        "href": "document/第七屆天物盃決賽 思考賽 Q3.pdf"
+        "href": "document/Tian-Wu_Physics_Cup_Q3.pdf"
       },
       {
         "label": "Solution",
-        "href": "document/第七屆天物盃決賽 思考賽 Q3 解答.pdf"
+        "href": "document/Tian-Wu_Physics_Cup_A3.pdf"
       },
       {
         "label": "Original Facebook link",
@@ -85,7 +85,7 @@ export const notes: Note[] = [
       },
       {
         "label": "Solution and Marking Scheme",
-        "href": "document/S2詳解與配分.pdf"
+        "href": "document/S2_full.pdf"
       }
     ],
     "date": "2024/07/17"
@@ -119,30 +119,5 @@ export const notes: Note[] = [
       }
     ],
     "date": "2024/10/16"
-  },
-  {
-    "title": "Self-learning Project",
-    "description": "A project focused primarily on further studying the field of electrodynamics.",
-    "links": [
-      {
-        "label": "Report",
-        "href": "document/自主學習 電磁輻射.pdf"
-      },
-      {
-        "label": "PPT",
-        "href": "document/自主學習 電磁輻射 PPT.pdf"
-      }
-    ],
-    "date": "2025/05/19"
-  },
-  {
-    "title": "Program Design",
-    "links": [
-      {
-        "label": "Report",
-        "href": "document/Final_Report.pdf"
-      }
-    ],
-    "date": "2024/12/26"
   }
 ];
