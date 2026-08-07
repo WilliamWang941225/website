@@ -18,15 +18,15 @@ export const notes: Note[] = [
   {
     "title": "Fluid Mechanics",
     "description": "About some interesting parts of fluid mechanics I thought of.",
-    "href": "document/Fluid Mechanics.pdf",
+    "href": "document/Fluid_Mechanics.pdf",
     "links": [
       {
         "label": "Main file",
-        "href": "document/Fluid Mechanics.pdf"
+        "href": "document/Fluid_Mechanics.pdf"
       },
       {
         "label": "Old version",
-        "href": "document/Fluid Mechanics (old ver).pdf"
+        "href": "document/Fluid_Mechanics_old_ver.pdf"
       }
     ],
     "date": "2026/07/23"
@@ -96,11 +96,11 @@ export const notes: Note[] = [
     "links": [
       {
         "label": "Lecture Handouts",
-        "href": "document/Gravity Handouts.pdf"
+        "href": "document/Gravity_Handouts.pdf"
       },
       {
         "label": "Lecture Notes",
-        "href": "document/Gravity Leture Notes.pdf"
+        "href": "document/Gravity_Leture_Notes.pdf"
       }
     ],
     "date": "2024/06/13"

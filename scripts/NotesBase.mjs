@@ -6,12 +6,12 @@ export const notesBase = [
     title: "Fluid Mechanics",
     description:
       "About some interesting parts of fluid mechanics I thought of.",
-    href: "document/Fluid Mechanics.pdf",
-    dateSourceHref: "document/Fluid Mechanics.pdf",
+    href: "document/Fluid_Mechanics.pdf",
+    dateSourceHref: "document/Fluid_Mechanics.pdf",
     fallbackDate: "2024/06/29",
     links: [
-      { label: "Main file", href: "document/Fluid Mechanics.pdf" },
-      { label: "Old version", href: "document/Fluid Mechanics (old ver).pdf" }
+      { label: "Main file", href: "document/Fluid_Mechanics.pdf" },
+      { label: "Old version", href: "document/Fluid_Mechanics_old_ver.pdf" }
     ]
   },
   {
@@ -53,10 +53,10 @@ export const notesBase = [
   {
     title: "Gravity",
     description: "Lecture materials prepared for the CCHS Physics Book Club. Please be aware that there could be mistakes in the lecture notes as they were compiled earlier. If there are any differences between the two, please refer to the handouts as the primary source.",
-    dateSourceHref: "document/Gravity Handouts.pdf",
+    dateSourceHref: "document/Gravity_Handouts.pdf",
     links: [
-      { label: "Lecture Handouts", href: "document/Gravity Handouts.pdf" },
-      { label: "Lecture Notes", href: "document/Gravity Leture Notes.pdf" }
+      { label: "Lecture Handouts", href: "document/Gravity_Handouts.pdf" },
+      { label: "Lecture Notes", href: "document/Gravity_Leture_Notes.pdf" }
     ]
   },
   {

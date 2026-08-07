@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "homepage": "https://WilliamWang941225.github.io/Website",
+  "homepage": "https://WilliamWang941225.github.io/website",
   "scripts": {
     "generate-notes": "node scripts/generateNotes.mjs",
     "dev": "npm run generate-notes && vite",
