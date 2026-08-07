@@ -7,6 +7,25 @@
     
     <link rel="icon" type="image/jpeg" href="%BASE_URL%images/favicon.jpeg" />
 
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("website-theme");
+          const theme =
+            savedTheme === "light" || savedTheme === "dark"
+              ? savedTheme
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch {
+          // Use the light stylesheet defaults if browser storage is unavailable.
+        }
+      })();
+    </script>
+
     <link rel="stylesheet" href="/assets/css/main.css" />
   </head>
 

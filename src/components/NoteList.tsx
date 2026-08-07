@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { Note } from "../data/Notes";
 
 function parseNoteDate(date: string): number {
@@ -10,8 +11,18 @@ function parseNoteDate(date: string): number {
   return new Date(year, month - 1, day).getTime();
 }
 
-function isExternalHref(href: string): boolean {
-  return href.startsWith("http://") || href.startsWith("https://") || href.startsWith("mailto:");
+function formatNoteDate(date: string): string {
+  if (!date) return "In progress";
+
+  const [year, month, day] = date.split("/").map(Number);
+
+  if (!year || !month || !day) return date;
+
+  return new Intl.DateTimeFormat("en", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(year, month - 1, day));
 }
 
 export default function NoteList({ notes }: { notes: Note[] }) {
@@ -20,46 +31,20 @@ export default function NoteList({ notes }: { notes: Note[] }) {
   );
 
   return (
-    <div className="features">
+    <div className="note-index" aria-label="Notes">
       {sortedNotes.map((note) => (
-        <article key={note.title}>
-          <div className="inner">
-            <h4>
-              {note.href ? (
-                <a
-                  href={note.href}
-                  target={isExternalHref(note.href) ? "_blank" : undefined}
-                  rel={isExternalHref(note.href) ? "noreferrer" : undefined}
-                >
-                  {note.title}
-                </a>
-              ) : (
-                note.title
-              )}
-            </h4>
-
-            {note.description && <p>{note.description}</p>}
-
-            {note.date && (
-              <p className="resource-date">Last updated: {note.date}</p>
-            )}
-            
-            {note.links && note.links.length > 0 && (
-              <p className="resource-links">
-                {note.links.map((link, index) => (
-                  <span key={`${note.title}-${link.href}`}>
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {link.label}
-                    </a>
-                    {index < note.links!.length - 1 ? <br /> : null}
-                  </span>
-                ))}
-              </p>
-            )}
+        <article className="note-index-item" key={note.slug}>
+          <h3>
+            <Link to={`/notes/${note.slug}`}>{note.title}</Link>
+          </h3>
+          <p className="note-summary">{note.summary}</p>
+          <div className="note-meta">
+            <span>{formatNoteDate(note.date)}</span>
+            {note.tags.map((tag) => (
+              <span className="note-tag" key={tag}>
+                {tag}
+              </span>
+            ))}
           </div>
         </article>
       ))}

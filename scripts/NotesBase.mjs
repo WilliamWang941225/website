@@ -3,9 +3,11 @@
 
 export const notesBase = [
   {
+    slug: "fluid-mechanics",
     title: "Fluid Mechanics",
-    description:
+    summary:
       "About some interesting parts of fluid mechanics I thought of.",
+    tags: ["Fluid dynamics", "Personal notes"],
     href: "document/Fluid_Mechanics.pdf",
     dateSourceHref: "document/Fluid_Mechanics.pdf",
     fallbackDate: "2024/06/29",
@@ -15,15 +17,21 @@ export const notesBase = [
     ]
   },
   {
+    slug: "jackson-electrodynamics",
     title: "Notes on Classical Electrodynamics 3rd edition, John David Jackson",
+    summary:
+      "Handouts and study notes for the third edition of Jackson's Classical Electrodynamics.",
+    tags: ["Electrodynamics", "Handouts"],
     href: "document/Jackson_Handouts.pdf",
     dateSourceHref: "document/Jackson_Handouts.pdf",
     fallbackDate: "2024/06/05",
     links: [{ label: "Main file", href: "document/Jackson_Handouts.pdf" }]
   },
   {
+    slug: "differential-geometry-general-relativity",
     title: "Differential Geometry and General Relativity",
-    description: "Still progressing.",
+    summary: "A work in progress on the geometric language of general relativity.",
+    tags: ["Differential geometry", "General relativity", "Work in progress"],
     href: "https://github.com/WilliamWang941225/Differential-Geometry-and-General-Relativity/raw/main/Differential%20Geometry%20and%20General%20Relativity.pdf",
     links: [
       {
@@ -34,6 +42,10 @@ export const notesBase = [
   },
   {
     title: "7th Tian Wu Physics Competition Final (第七屆天物盃決賽) - Q3",
+    slug: "tian-wu-physics-q3",
+    summary:
+      "The problem, solution, and original announcement for Question 3 of the final round.",
+    tags: ["Physics competition", "Problem solution"],
     dateSourceHref: "document/Tian-Wu_Physics_Cup_Q3.pdf",
     links: [
       { label: "Problem", href: "document/Tian-Wu_Physics_Cup_Q3.pdf" },
@@ -43,6 +55,10 @@ export const notesBase = [
   },
   {
     title: "2024 IPhOC 秒題大賽 - Q2",
+    slug: "iphoc-2024-q2",
+    summary:
+      "Question 2, its answer, and the official solution and marking scheme from IPhOC 2024.",
+    tags: ["Physics competition", "Problem solution"],
     dateSourceHref: "document/Q2.pdf",
     links: [
       { label: "Problem", href: "document/Q2.pdf" },
@@ -51,8 +67,11 @@ export const notesBase = [
     ]
   },
   {
+    slug: "gravity",
     title: "Gravity",
-    description: "Lecture materials prepared for the CCHS Physics Book Club. Please be aware that there could be mistakes in the lecture notes as they were compiled earlier. If there are any differences between the two, please refer to the handouts as the primary source.",
+    summary:
+      "Lecture materials prepared for the CCHS Physics Book Club, with handouts as the primary reference.",
+    tags: ["General relativity", "Lecture materials"],
     dateSourceHref: "document/Gravity_Handouts.pdf",
     links: [
       { label: "Lecture Handouts", href: "document/Gravity_Handouts.pdf" },
@@ -60,7 +79,10 @@ export const notesBase = [
     ]
   },
   {
+    slug: "physics-cup-2024-problem-4",
     title: "Solution to Problem 4 of Physics Cup 2024",
+    summary: "A worked solution to the fourth problem from Physics Cup 2024.",
+    tags: ["Physics competition", "Problem solution"],
     href: "document/Physics_Cup_2024.pdf",
     dateSourceHref: "document/Physics_Cup_2024.pdf",
     links: [

@@ -52,10 +52,12 @@ function getDateForResource(resource) {
 }
 
 const notesWithDates = notesBase.map((note) => {
-  const { dateSourceHref, fallbackDate, ...noteForWebsite } = note;
+  const { dateSourceHref, fallbackDate, description, ...noteForWebsite } = note;
 
   return {
     ...noteForWebsite,
+    summary: note.summary ?? description ?? "",
+    tags: note.tags ?? [],
     date: getDateForResource(note)
   };
 });
@@ -69,10 +71,12 @@ export type NoteLink = {
 };
 
 export type Note = {
+  slug: string;
   title: string;
   href?: string;
-  description?: string;
+  summary: string;
   date: string;
+  tags: string[];
   links?: NoteLink[];
 };
 

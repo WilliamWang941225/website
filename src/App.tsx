@@ -3,9 +3,11 @@ import { useEffect } from "react";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import Notes from "./components/Notes";
+import NoteDetail from "./components/NoteDetail";
 import Resources from "./components/Resources";
 import Tutor from "./components/Tutor";
 import RouteScrollManager from "./components/RouteScrollManager";
+import ThemeToggle from "./components/ThemeToggle";
 
 const pages = [
   {
@@ -34,12 +36,14 @@ export default function App() {
   return (
     <div id="wrapper" className="no-sidebar">
       <RouteScrollManager />
+      <ThemeToggle />
 
       <div id="main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/notes" element={<Notes />} />
+          <Route path="/notes/:slug" element={<NoteDetail />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/tutor" element={<Tutor />} />
         </Routes>

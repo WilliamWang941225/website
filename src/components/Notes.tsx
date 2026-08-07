@@ -9,6 +9,7 @@ export default function MyNotes() {
         <BackHomeButton />
         <header className="comp-major">
           <h2>My Notes</h2>
+          <p>A collection of notes, handouts, and worked solutions.</p>
         </header>
         <NoteList notes={notes} />
       </div>
