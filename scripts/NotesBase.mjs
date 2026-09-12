@@ -1,6 +1,8 @@
 // Edit this file when you add, remove, or rename notes.
 // The date will be detected from the local file in public/document/ when possible.
 
+import { href } from "react-router-dom";
+
 export const notesBase = [
   {
     slug: "fluid-mechanics",
@@ -15,6 +17,15 @@ export const notesBase = [
       { label: "Main file", href: "document/Fluid_Mechanics.pdf" },
       { label: "Old version", href: "document/Fluid_Mechanics_old_ver.pdf" }
     ]
+  },
+  {
+    slug: "olympiad-record",
+    title: "Olympiad Record",
+    summary: 
+      "My own experience during preparation.",
+      tags: ["Personal notes"],
+      href: "document/Olympiad_Record.pdf",
+      links: [{ label: "Main file", href: "document/Olympiad_Record.pdf"}],
   },
   {
     slug: "jackson-electrodynamics",

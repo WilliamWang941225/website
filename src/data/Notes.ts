@@ -39,6 +39,22 @@ export const notes: Note[] = [
     "date": "2026/07/23"
   },
   {
+    "slug": "olympiad-record",
+    "title": "Olympiad Record",
+    "summary": "My own experience during preparation.",
+    "tags": [
+      "Personal notes"
+    ],
+    "href": "document/Olympiad_Record.pdf",
+    "links": [
+      {
+        "label": "Main file",
+        "href": "document/Olympiad_Record.pdf"
+      }
+    ],
+    "date": "2026/09/12"
+  },
+  {
     "slug": "jackson-electrodynamics",
     "title": "Notes on Classical Electrodynamics 3rd edition, John David Jackson",
     "summary": "Handouts and study notes for the third edition of Jackson's Classical Electrodynamics.",
