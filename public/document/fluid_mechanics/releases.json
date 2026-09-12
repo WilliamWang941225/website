@@ -1,0 +1,30 @@
+[
+    {
+        "version": "0.1",
+        "date": "2023/10/06",
+        "file": "Fluid_Mechanics_v0.1.pdf",
+        "summary": "Baby version by Word.",
+        "changes": []
+    },
+    {
+        "version": "0.2",
+        "date": "2026/06/21",
+        "file": "Fluid_Mechanics_v0.2.pdf",
+        "summary": "",
+        "changes": ["Refine Content: conservation laws, Navier-Stokes equation, naming of equation.","Add references."]
+    },
+    {
+        "version": "0.3",
+        "date": "2026/06/23",
+        "file": "Fluid_Mechanics_v0.3.pdf",
+        "summary": "",
+        "changes": ["Add exercises."]
+    },
+    {
+        "version": "0.4",
+        "date": "2026/07/23",
+        "file": "Fluid_Mechanics_v0.4.pdf",
+        "summary": "",
+        "changes": ["Modify stress-tensor, energy-conservation and add citation."]
+    }
+]

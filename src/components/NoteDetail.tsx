@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import BackHomeButton from "./BackHomeButton";
+import ReleaseTimeline from "./ReleaseTimeline";
 import { notes } from "../data/Notes";
 
 function isExternalHref(href: string): boolean {
@@ -71,7 +72,9 @@ export default function NoteDetail() {
             <p>{note.summary}</p>
           </div>
 
-          {resources.length > 0 && (
+          {note.releases && note.releases.length > 0 ? (
+            <ReleaseTimeline releases={note.releases} />
+          ) : resources.length > 0 && (
             <section
               className="note-resources"
               aria-labelledby="note-resources-title"

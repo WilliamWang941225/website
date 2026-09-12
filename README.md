@@ -214,6 +214,71 @@ git commit -m "Update website content"
 git push
 ```
 
+## Versioned PDF releases
+
+The Fluid Mechanics archive is `public/document/fluid_mechanics/`. Its
+`releases.json` manifest is the source for its versioned PDFs, dates, and changes.
+The original top-level current and old PDFs have been replaced by this archive.
+
+To publish a numbered revision:
+
+1. Place the PDF in that folder with a permanent filename, for example
+   `Fluid_Mechanics_v1.1.pdf`. Keep older files unchanged. Include a numbered
+   snapshot of the current edition as well as older editions.
+2. Add an entry to the JSON array. The following is a format example only;
+   replace the version, filename, and text with your actual release information:
+
+   ```json
+   [
+     {
+       "version": "1.1",
+       "date": null,
+       "file": "Fluid_Mechanics_v1.1.pdf",
+       "summary": "Your changes statement goes here.",
+       "changes": ["An optional individual change."]
+     }
+   ]
+   ```
+
+3. Run `npm.cmd run build`, then `npm.cmd run preview -- --base /website/`.
+   Open the preview address under `/website/#/notes/fluid-mechanics` to review it.
+   Publishing remains a separate action.
+
+Versions use `major.minor` without a `v` prefix or leading zeroes. The generator
+sorts them numerically, with the highest version displayed as Latest; `1.10`
+is newer than `1.9`. Array order and release dates do not determine this order.
+Use an actual release date in `YYYY/MM/DD`, or `null` for “Date not recorded.”
+The latest version's recorded date also supplies the note's update date in the
+notes list and detail-page header, and determines its position in the notes list.
+“Latest” means the highest version number, not the most recent filesystem time
+or the greatest date in the manifest. If that release's date is unknown, the
+note date remains empty; it does not inherit a date from an older version or
+the PDF's modification time. Non-versioned notes retain file-date detection
+and their configured fallbacks.
+
+`summary` supplies the paragraph under **Changes**; `changes` supplies optional
+bullets. Both may be omitted or empty. An empty statement and list display
+“Changes have not been documented for this release.” Each `file` must be a PDF
+filename inside the manifest folder, not a path or URL. Spaces, Unicode and
+filename case are preserved; avoid `#` and `?`, which are rejected for local
+preview compatibility. Invalid manifests, duplicate versions, and missing
+PDFs stop generation with an error identifying the manifest and entry.
+
+The generated note's primary PDF link follows the highest version automatically.
+The timeline uses each entry's permanent versioned link. Generation does not
+move, copy, overwrite, or synchronize PDFs. An empty manifest uses any legacy
+links and date settings configured for that note; Fluid Mechanics now has none.
+
+For another note, create its own archive folder and JSON manifest, then add a
+`releaseManifest` path relative to `public/` to its entry in
+`scripts/NotesBase.mjs`. The generator writes the typed releases to
+`src/data/Notes.ts`; do not edit that generated file. During an already-running
+development session, rerun `npm.cmd run generate-notes` after changing a manifest.
+
+Run the focused manifest validation checks with
+`node --test scripts/releaseManifest.test.mjs` and the date-generation regression
+checks with `node --test scripts/generateNotes.test.mjs`.
+
 ## Main files to look at
 
 ```text

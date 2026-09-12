@@ -6,6 +6,14 @@ export type NoteLink = {
   href: string;
 };
 
+export type NoteRelease = {
+  version: string;
+  date: string | null;
+  href: string;
+  summary: string;
+  changes: string[];
+};
+
 export type Note = {
   slug: string;
   title: string;
@@ -14,6 +22,7 @@ export type Note = {
   date: string;
   tags: string[];
   links?: NoteLink[];
+  releases?: NoteRelease[];
 };
 
 export const notes: Note[] = [
@@ -25,18 +34,45 @@ export const notes: Note[] = [
       "Fluid dynamics",
       "Personal notes"
     ],
-    "href": "document/Fluid_Mechanics.pdf",
-    "links": [
+    "date": "2026/07/23",
+    "releases": [
       {
-        "label": "Main file",
-        "href": "document/Fluid_Mechanics.pdf"
+        "version": "0.4",
+        "date": "2026/07/23",
+        "href": "document/fluid_mechanics/Fluid_Mechanics_v0.4.pdf",
+        "summary": "",
+        "changes": [
+          "Modify stress-tensor, energy-conservation and add citation."
+        ]
       },
       {
-        "label": "Old version",
-        "href": "document/Fluid_Mechanics_old_ver.pdf"
+        "version": "0.3",
+        "date": "2026/06/23",
+        "href": "document/fluid_mechanics/Fluid_Mechanics_v0.3.pdf",
+        "summary": "",
+        "changes": [
+          "Add exercises."
+        ]
+      },
+      {
+        "version": "0.2",
+        "date": "2026/06/21",
+        "href": "document/fluid_mechanics/Fluid_Mechanics_v0.2.pdf",
+        "summary": "",
+        "changes": [
+          "Refine Content: conservation laws, Navier-Stokes equation, naming of equation.",
+          "Add references."
+        ]
+      },
+      {
+        "version": "0.1",
+        "date": "2023/10/06",
+        "href": "document/fluid_mechanics/Fluid_Mechanics_v0.1.pdf",
+        "summary": "Baby version by Word.",
+        "changes": []
       }
     ],
-    "date": "2026/07/23"
+    "href": "document/fluid_mechanics/Fluid_Mechanics_v0.4.pdf"
   },
   {
     "slug": "olympiad-record",

@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { notesBase } from "./NotesBase.mjs";
+import { readReleases } from "./releaseManifest.mjs";
 
 const publicDir = path.join(process.cwd(), "public");
 const outputFile = path.join(process.cwd(), "src", "data", "Notes.ts");
@@ -41,7 +42,11 @@ function getFileDate(href) {
   return formatDate(stats.mtime);
 }
 
-function getDateForResource(resource) {
+function getDateForResource(resource, latestRelease) {
+  // A versioned note follows the latest version's recorded release date.
+  // An unknown release date must not inherit a legacy date or a copied PDF's mtime.
+  if (latestRelease) return latestRelease.date ?? "";
+
   // Prefer dateSourceHref. Otherwise use the main href. Otherwise use the first link.
   const candidateHref =
     resource.dateSourceHref ?? resource.href ?? resource.links?.[0]?.href ?? "";
@@ -52,13 +57,17 @@ function getDateForResource(resource) {
 }
 
 const notesWithDates = notesBase.map((note) => {
-  const { dateSourceHref, fallbackDate, description, ...noteForWebsite } = note;
+  const { dateSourceHref, fallbackDate, description, releaseManifest, ...noteForWebsite } = note;
+  const releases = releaseManifest !== undefined ? readReleases(publicDir, releaseManifest) : undefined;
+  const latestRelease = releases?.[0];
 
   return {
     ...noteForWebsite,
     summary: note.summary ?? description ?? "",
     tags: note.tags ?? [],
-    date: getDateForResource(note)
+    date: getDateForResource(note, latestRelease),
+    ...(releases !== undefined ? { releases } : {}),
+    ...(latestRelease ? { href: latestRelease.href } : {})
   };
 });
 
@@ -70,6 +79,14 @@ export type NoteLink = {
   href: string;
 };
 
+export type NoteRelease = {
+  version: string;
+  date: string | null;
+  href: string;
+  summary: string;
+  changes: string[];
+};
+
 export type Note = {
   slug: string;
   title: string;
@@ -78,6 +95,7 @@ export type Note = {
   date: string;
   tags: string[];
   links?: NoteLink[];
+  releases?: NoteRelease[];
 };
 
 export const notes: Note[] = ${JSON.stringify(notesWithDates, null, 2)};

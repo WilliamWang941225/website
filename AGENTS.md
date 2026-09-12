@@ -40,7 +40,7 @@ Deployment is a publishing action. Run it when the user has requested or already
 - Edit `scripts/NotesBase.mjs`, then regenerate. Do not hand-edit `src/data/Notes.ts`.
 - Keep slugs unique and stable: they form the public `/notes/:slug` routes. Retain existing URLs unless a change is intentional.
 - Put local files in `public/document/` and use hrefs such as `document/Fluid_Mechanics.pdf`. Preserve spaces, Unicode, and case in filenames and links.
-- Dates come from local filesystem modification times, using `dateSourceHref`, otherwise `href`, otherwise the first link. Missing or external files use `fallbackDate`, or an empty date if none is supplied.
+- For notes with releases, the highest numeric major/minor version supplies the note's date and primary PDF link. A null latest-release date produces an empty note date; never substitute another release's date or a PDF modification time. For notes without releases, dates come from local filesystem modification times, using `dateSourceHref`, otherwise `href`, otherwise the first link. Missing or external files use `fallbackDate`, or an empty date if none is supplied.
 - The generator stores dates as `YYYY/MM/DD`. The UI formats them for readers, sorts notes newest first, and displays an empty date as "In progress".
 - Both development and build commands regenerate dates. Inspect resulting changes: file copies or a fresh checkout can change modification times without a content revision. Do not invent dates or silently change the date policy to hide this effect.
 

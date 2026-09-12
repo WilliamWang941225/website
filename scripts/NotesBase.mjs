@@ -1,5 +1,5 @@
 // Edit this file when you add, remove, or rename notes.
-// The date will be detected from the local file in public/document/ when possible.
+// Versioned notes use their latest release date; other notes detect local file dates.
 
 import { href } from "react-router-dom";
 
@@ -10,13 +10,7 @@ export const notesBase = [
     summary:
       "About some interesting parts of fluid mechanics I thought of.",
     tags: ["Fluid dynamics", "Personal notes"],
-    href: "document/Fluid_Mechanics.pdf",
-    dateSourceHref: "document/Fluid_Mechanics.pdf",
-    fallbackDate: "2024/06/29",
-    links: [
-      { label: "Main file", href: "document/Fluid_Mechanics.pdf" },
-      { label: "Old version", href: "document/Fluid_Mechanics_old_ver.pdf" }
-    ]
+    releaseManifest: "document/fluid_mechanics/releases.json"
   },
   {
     slug: "olympiad-record",
