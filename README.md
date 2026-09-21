@@ -279,6 +279,36 @@ Run the focused manifest validation checks with
 `node --test scripts/releaseManifest.test.mjs` and the date-generation regression
 checks with `node --test scripts/generateNotes.test.mjs`.
 
+### Stable link to the latest PDF
+
+Use this permanent URL in a CV or other external page after deploying the site:
+
+https://williamwang941225.github.io/website/notes/fluid-mechanics/latest/
+
+It forwards the browser to the highest numbered release, currently
+`document/fluid_mechanics/Fluid_Mechanics_v0.4.pdf`. The address in the browser
+then shows that numbered PDF. For citations to a specific edition, use its
+permanent numbered PDF link instead.
+
+`npm.cmd run generate-notes` generates a small standalone HTML page at
+`public/notes/<slug>/latest/index.html` for each note with a release manifest.
+Development and production builds already run this command; Vite copies the
+page into the published output. Do not edit the generated page directly.
+Adding a numbered PDF and its manifest entry, then building and deploying,
+updates the destination without changing the CV link or copying any PDFs.
+
+The page uses an immediate HTML redirect, which also works without JavaScript,
+plus `location.replace` when JavaScript is available to avoid an extra Back
+history entry. It includes **Open PDF** and **View release history** links if
+automatic forwarding is blocked. An empty archive shows “No PDF is available
+yet” instead of retaining an old redirect. This URL serves HTML initially, so
+it is intended for browser clicks, not tools that require PDF bytes immediately.
+
+Keep the trailing slash. Preview the link at `/notes/fluid-mechanics/latest/`
+in development and `/website/notes/fluid-mechanics/latest/` in the production
+preview. The existing `/#/notes/fluid-mechanics` route remains the archive page.
+The generator regression checks above also cover the forwarding page.
+
 ## Main files to look at
 
 ```text

@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { notesBase } from "./NotesBase.mjs";
 import { readReleases } from "./releaseManifest.mjs";
+import { writeLatestPdfPages } from "./latestPdfPage.mjs";
 
 const publicDir = path.join(process.cwd(), "public");
 const outputFile = path.join(process.cwd(), "src", "data", "Notes.ts");
@@ -104,3 +105,4 @@ export const notes: Note[] = ${JSON.stringify(notesWithDates, null, 2)};
 fs.mkdirSync(path.dirname(outputFile), { recursive: true });
 fs.writeFileSync(outputFile, output, "utf8");
 console.log(`Generated ${path.relative(process.cwd(), outputFile)}`);
+writeLatestPdfPages(publicDir, notesWithDates);
