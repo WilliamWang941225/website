@@ -26,5 +26,12 @@
         "file": "Fluid_Mechanics_v0.4.pdf",
         "summary": "",
         "changes": ["Modify stress-tensor, energy-conservation and add citation."]
+    },
+    {
+        "version": "0.5",
+        "date": "2026/08/18",
+        "file": "Fluid_Mechanics_v0.5.pdf",
+        "summary": "",
+        "changes": ["Modify chapter pressure-and-buoyancy and stress-tensor.", "Add intuitive figures."]
     }
 ]
